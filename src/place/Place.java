@@ -1,10 +1,10 @@
 package place;
 
-public class Place {
-    private int x;
-    private int y;
-    private int z;
-    private String name;
+public abstract class Place {
+    private final int x;
+    private final int y;
+    private final int z;
+    private final String name;
 
     public Place(String name, int x, int y, int z) {
         this.x = x;
