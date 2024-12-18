@@ -13,17 +13,17 @@ public class Migo extends Character {
             throw new PossibleException(getName() + " не может раздавать яблоки из-за плохого настроения!");
         }
 
-        // Поиск первого яблока в инвентаре
+
         for (int i = 0; i < appleInventory.length; i++) {
             if (appleInventory[i] != null) {
-                target.addApple(); // Передача яблока другому персонажу
+                target.addApple();
                 System.out.println(getName() + " дал яблоко " + target.getName());
-                appleInventory[i] = null; // Удаляем яблоко из инвентаря
-                return; // Завершаем метод после успешной передачи яблока
+                appleInventory[i] = null;
+                return;
             }
         }
 
-        // Если ни одно яблоко не было найдено
+
         throw new PossibleException(getName() + " не имеет яблок для передачи!");
     }
 
@@ -38,7 +38,7 @@ public class Migo extends Character {
     @Override
     public void move(Place newLocation) {
         int distance = getLocation().distanceTo(newLocation);
-        setLocation(newLocation);
+        this.location = newLocation;
         System.out.println(getName() + " пришёл в " + newLocation.getName() + " на расстояние " + distance + " единиц.");
     }
 }

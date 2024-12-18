@@ -38,7 +38,7 @@ public class Julio extends Character implements StateUtilit {
     @Override
     public void move(Place newLocation) {
         int distance = getLocation().distanceTo(newLocation);
-        setLocation(newLocation);
+        this.location = newLocation;
         System.out.println(getName() + " переместился в " + newLocation.getName() + " на расстояние " + distance + " единиц.");
     }
 }

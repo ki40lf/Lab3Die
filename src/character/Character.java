@@ -6,15 +6,15 @@ import place.Place;
 public abstract class Character implements Payable {
     private String name;
     private State state;
-    private Place location;
+    protected Place location;
     private int money;
     public final Apple[] appleInventory;// Массив для хранения яблок
 
     public Character(String name, State state, Place location, int money) {
         setName(name);
-        setLocation(location);
         setBalance(money);
         setState(state);
+        this.location = location;
         this.appleInventory = new Apple[8];
     }
 
@@ -57,13 +57,6 @@ public abstract class Character implements Payable {
 
     public Place getLocation() {
         return location;
-    }
-
-    public void setLocation(Place location) {
-        if (location == null) {
-            throw new InvalidCharacterDataException("Локация персонажа не может быть null.");
-        }
-        this.location = location;
     }
 
     public void throwApple() throws PossibleException {
@@ -115,7 +108,7 @@ public abstract class Character implements Payable {
         return getClass().getSimpleName() + "{" +
                 "name='" + name + '\'' +
                 ", state=" + state +
-                ", location='" + location + '\'' +
+                ", location='" + location.getName() + '\'' +
                 ", money=" + money +
                 '}';
     }

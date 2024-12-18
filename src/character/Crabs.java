@@ -35,7 +35,7 @@ public class Crabs extends Character {
     @Override
     public void move(Place newLocation) {
         int distance = getLocation().distanceTo(newLocation);
-        setLocation(newLocation);
+        this.location = newLocation;
         System.out.println(getName() + " переместился (под звуки Мр.Крабса из Губки Боба) в " + newLocation.getName() + " на расстояние " + distance + " единиц.");
     }
 }
