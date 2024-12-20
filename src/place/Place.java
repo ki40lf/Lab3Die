@@ -2,7 +2,7 @@ package place;
 
 import help.InvalidCharacterDataException;
 
-public abstract class Place {
+public class Place {
     private final int x;
     private final int y;
     private final int z;
