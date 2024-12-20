@@ -1,3 +1,5 @@
+package program;
+
 import character.*;
 import character.Character;
 import help.*;
